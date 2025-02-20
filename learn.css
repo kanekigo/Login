@@ -36,9 +36,11 @@ li {
   position: relative;
 }
 
-button {
+button a {
   color: white;
   background: #1c1f2b;
+  border: none;
+  outline: none;
 }
 
 @property --angle {
