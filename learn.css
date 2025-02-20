@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  background-color: black;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+li {
+  color: black;
+  font-style: italic;
+  display: flex;
+  padding: 2px;
+  left: 0;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.card {
+  color: white;
+  margin: 0 auto;
+  padding: 2em;
+  top: 150px;
+  left: 150px;
+  width: 300px;
+  background: #1c1f2b;
+  text-align: center;
+  border-radius: 10px;
+  height: 250px;
+  position: relative;
+}
+
+button {
+  color: white;
+  background: #1c1f2b;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after,
+.card::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    blue,
+    red,
+    yellow,
+    rgb(0, 204, 255),
+    blue
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 8px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+.card::before {
+  filter: blur(1.5rem);
+  opacity: 0.9;
+}
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
